@@ -3,7 +3,6 @@ package utils
 import (
 	"time"
 	"fmt"
-	"log"
 )
 
 func ParseDate(dateStr string, format string) (time.Time, error) {

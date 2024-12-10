@@ -70,3 +70,12 @@ func (c *UserController) DeleteUser(ctx echo.Context) error {
 
 	return utils.Respond(ctx, http.StatusOK, nil, "User deleted successfully")
 }
+
+func (c *UserController) GetOpenLibraryData(ctx echo.Context) error {
+	data, err := c.Service.GetOpenLibraryData()
+	if err != nil {
+		return utils.Respond(ctx, http.StatusInternalServerError, nil, err.Error())
+	}
+
+	return utils.Respond(ctx, http.StatusOK, data, "Successfully retrieved data from external API")
+}

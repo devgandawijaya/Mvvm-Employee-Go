@@ -11,4 +11,5 @@ func InitRouter(e *echo.Echo, userController *controller.UserController) {
 	e.POST("/users", userController.CreateUser)
 	e.PUT("/users/:id", userController.UpdateUser)
 	e.DELETE("/users/:id", userController.DeleteUser)
+	e.GET("/users/openlibrary", userController.GetOpenLibraryData)
 }
